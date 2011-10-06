@@ -1,7 +1,7 @@
 <?php
 /*
 Plugin Name: Fetch Feed shortcode pageable
-Version: 1.0
+Version: 1.1
 Description: Makes it easy to display an RSS feed on a page. Uses fetch_feed function instead auf depreciated fetch_rss. Supports configurable paging !
 Author: soundwaves-productions
 */
