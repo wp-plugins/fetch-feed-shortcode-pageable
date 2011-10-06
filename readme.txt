@@ -12,8 +12,12 @@ This plugin also supports configurable paging  !
 
 == Description ==
 
-This plugin uses the fetch_feed function to display and page external RSS Feeds on your Wordpress Blog / Site!
+This plugin uses the fetch_feed function to display external RSS Feeds on your Wordpress Blog / Site!
+This plugin supports paging of the feed !
+
 Paging code found here: http://www.phpbuilder.com/board/showthread.php?t=10353797
+Thanks to joostdevalk for his plugin:
+http://wordpress.org/extend/plugins/rss-shortcode/
 
 
 Features:
