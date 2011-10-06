@@ -18,8 +18,9 @@ function FetchFeedPageable_call( $atts ) {
 	   "feed" 		=> '',  
 		"showall" 		=> 'yes',  
 		"num" 		=> '5', 
-		"excerpt" 	=> true,
 		"target"	=> '_self',
+		"linktitle"	=> 'yes',
+		"itemelements" =>'title,author,date,description',
 		"pagesize" =>'10',
 		"pagenum" =>'10'
 	), $atts));
@@ -137,19 +138,41 @@ if ($iPages > 1 ) // we need to generate a pagination bar
 } // end generation of pagination bar 
 
 foreach($rss->get_items($iCursor, ROWCOUNT) as $item) {
- 	$title= $item->get_title() ;
- 	$description =$item->get_description() ;
- 	$link =$item->get_permalink() ;
-	if ($target != '_self') {
-				$content .= '<p class="ItemTitle"><a class="ItemTitleLink" href='.$link.' target="_blank">'. esc_html($title) .'</a></p>';
+	
+			$ItemElementsTmp = explode(",",$itemelements);
+			for($i = 0;$i < count($ItemElementsTmp);$i ++) 			{
+		switch ($ItemElementsTmp[$i]) {
+    case "title":
+      $title= $item->get_title() ;
+      if ($linktitle!='yes')  {
+				$content .= '<div class="ItemTitle">'. esc_html($title) .'</div>';		
+			} else {
+				 	$link =$item->get_permalink() ;
+			if ($target != '_self') {
+				$content .= '<div class="ItemTitle"><a class="ItemTitleLink" href='.$link.' target="_blank">'. esc_html($title) .'</a></div>';
 			}else{
-				$content .= '<p class="ItemTitle"><a class="ItemTitleLink" href='.$link.' >'. esc_html($title) .'</a></p>';
-		}
-			if ( $excerpt != false && $excerpt != "false") {
-				$content .= '<p class="ItemDescription">'. esc_html($description) .'</p>';
+				$content .= '<div class="ItemTitle"><a class="ItemTitleLink" href='.$link.' >'. esc_html($title) .'</a></div>';
 			}
-		$content.='<br><hr class="ItemSeparator">';
+			}
+      break;
+    case "author":
+       if ($author = $item->get_author()) 	{
+					$authorname = $author->get_name();
+					}
+        			$content .= '<div class="ItemAuthor">'. esc_html($authorname) .'</div>';
+        break;
+    case "date":
+    		$date=$item->get_date();
+        			$content .= '<div class="ItemDate">'. esc_html($date) .'</div>';    		
+				break;
+    case "description":
+     					$description =$item->get_description() ;
+        			$content .= '<div class="ItemDescription">'. esc_html($description) .'</div>';
+        break;
+  	}
 		}
+				$content.='<br><hr class="ItemSeparator">';
+	}
 	$content.=$aPage["PAGINATION"];
 	return $content;
 }
