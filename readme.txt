@@ -40,7 +40,7 @@ e.g.:
 [FetchFeedPageable feed="http://www.rottentomatoes.com/syndication/rss/in_theaters.xml" excerpt="true"  pagesize=10 pagenum=5]
 
 == Frequently Asked Questions ==
-= How do I an external feed to my post or page? =
+= How do I include an external RSS Feed to my post or page? =
 
 Use shortcode:
 
