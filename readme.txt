@@ -1,6 +1,7 @@
 === Plugin Name ===
 Contributors: soundwaves-productions
 Plugin Name: Fetch Feed shortcode pageable
+Donate link: http://www.soundwaves-productions.com/soundwavesblog/wordpress-plugins/fetch-feed-shortcode-pageable/
 Tags: RSS, fetch_feed, RSS fetch feed, RSS shortcode, RSS fetch feed shortcode, feed shortcode, pageable feed, paging, RSS pageable,fetch_feed
 Requires at least: 2.8
 Tested up to: 3.1
