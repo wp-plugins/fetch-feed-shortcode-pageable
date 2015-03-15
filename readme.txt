@@ -4,7 +4,7 @@ Plugin Name: Fetch Feed shortcode pageable
 Donate link: http://www.soundwaves-productions.com/soundwavesblog/wordpress-plugins/fetch-feed-shortcode-pageable/
 Tags: RSS, fetch_feed, RSS fetch feed, RSS shortcode, RSS fetch feed shortcode, feed shortcode, pageable feed, paging, RSS pageable,fetch_feed
 Requires at least: 2.8
-Tested up to: 3.1
+Tested up to: 4.1.1
 Stable tag: 1.1
 
 This plugin uses the fetch_feed function to display external RSS Feeds on your Wordpress Blog / Site!
