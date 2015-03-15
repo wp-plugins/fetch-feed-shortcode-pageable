@@ -168,7 +168,7 @@ foreach($rss->get_items($iCursor, ROWCOUNT) as $item) {
 				break;
     case "description":
      					$description =$item->get_description() ;
-        			$content .= '<div class="ItemDescription">'. esc_html($description) .'</div>';
+        			$content .= '<div class="ItemDescription">'. $description .'</div>';
         break;
   	}
 		}
